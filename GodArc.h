@@ -12,11 +12,11 @@ class GodArc {
 		GodArc();
 		GodArc(int, string);
 
-		int getAtaque();
-		string getElemento();
+		 int getAtaque();
+		 string getElemento();
 
-		void setAtaque(int);
-		void setElemento(string);
+		 void setAtaque(int);
+		 void setElemento(string);
 
-		int atacar();
+		 int atacar();
 };
