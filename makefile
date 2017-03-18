@@ -1,7 +1,7 @@
-Main:	Main.o GodArc.o BusterSword.o Scythe.o ShortSword.o GodEaters.o
-	g++ Main.o GodArc.o BusterSword.o Scythe.o ShortSword.o GodEaters.o -o Main
+Main:	Main.o GodArc.o BusterSword.o Scythe.o ShortSword.o GodEaters.o Aragamis.o
+	g++ Main.o GodArc.o BusterSword.o Scythe.o ShortSword.o GodEaters.o Aragamis.o -o Main
 
-Main.o: GodArc.h BusterSword.h Scythe.h ShortSword.h GodEaters.h   Main.cpp
+Main.o: GodArc.h BusterSword.h Scythe.h ShortSword.h GodEaters.h Aragamis.h  Main.cpp
 	g++ -c Main.cpp
 
 GodArc.o:	GodArc.cpp GodArc.h BusterSword.h Scythe.h ShortSword.h
@@ -19,5 +19,7 @@ ShortSword.o:	ShortSword.cpp ShortSword.h
 GodEaters.o:	GodEaters.cpp GodEaters.h
 	g++ -c GodEaters.cpp
 
+Aragamis.o:	Aragamis.cpp Aragamis.h
+	g++ -c Aragamis.cpp
 clean:
 	rm *.o Main
