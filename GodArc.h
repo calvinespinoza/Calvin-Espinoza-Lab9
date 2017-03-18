@@ -5,16 +5,18 @@ using namespace std;
 
 class GodArc {
 	protected:
-		int nivel;
+		int ataque;
 		string elemento;
 
 	public:
 		GodArc();
 		GodArc(int, string);
 
-		int getNivel();
+		int getAtaque();
 		string getElemento();
 
-		void setNivel(int);
+		void setAtaque(int);
 		void setElemento(string);
+
+		int atacar();
 };

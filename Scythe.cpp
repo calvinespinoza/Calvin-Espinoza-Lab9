@@ -2,15 +2,15 @@
 
 Scythe::Scythe()
 {
-	nivel = 0;
+	ataque = 0;
 	elemento = "";
 	nivelAtaque = 0;
 	poder = 0;
 }
 
-Scythe::Scythe(int pNivel, string pElemento, int pNivelAtaque, int pPoder) : GodArc(pNivel, pElemento)
+Scythe::Scythe(int pAtaque, string pElemento, int pNivelAtaque, int pPoder) : GodArc(pAtaque, pElemento)
 {
-	nivel = pNivel;
+	ataque = pAtaque;
 	elemento = pElemento;
 	nivelAtaque = pNivelAtaque;
 	poder = pPoder;

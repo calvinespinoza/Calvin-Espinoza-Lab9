@@ -2,15 +2,15 @@
 
 ShortSword::ShortSword()
 {
-	nivel = 0;
+	ataque = 0;
 	elemento = "";
 	nivelAtaque = 0;
 	poder = 0;
 }
 
-ShortSword::ShortSword(int pNivel, string pElemento, int pNivelAtaque, int pPoder) : GodArc(pNivel, pElemento)
+ShortSword::ShortSword(int pAtaque, string pElemento, int pNivelAtaque, int pPoder) : GodArc(pAtaque, pElemento)
 {
-	nivel = pNivel;
+	ataque = pAtaque;
 	elemento = pElemento;
 	nivelAtaque = pNivelAtaque;
 	poder = pPoder;

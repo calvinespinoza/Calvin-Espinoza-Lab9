@@ -2,19 +2,19 @@
 
 GodArc::GodArc()
 {
-	nivel = 0;
+	ataque = 0;
 	elemento = "";
 }
 
-GodArc::GodArc(int pNivel, string pElemento)
+GodArc::GodArc(int pAtaque, string pElemento)
 {
-	nivel = pNivel;
+	ataque = pAtaque;
 	elemento = pElemento;
 }
 
-int GodArc::getNivel()
+int GodArc::getAtaque()
 {
-	return nivel;
+	return ataque;
 }
 
 string GodArc::getElemento()
@@ -22,12 +22,17 @@ string GodArc::getElemento()
 	return elemento;
 }
 
-void GodArc::setNivel(int pNivel)
+void GodArc::setAtaque(int pAtaque)
 {
-	nivel = pNivel;
+	ataque = pAtaque;
 }
 
 void GodArc::setElemento(string pElemento)
 {
 	elemento = pElemento;
+}
+
+int GodArc::atacar()
+{
+	return ataque;
 }

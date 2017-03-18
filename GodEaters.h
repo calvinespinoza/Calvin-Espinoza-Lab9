@@ -20,10 +20,11 @@ class GodEaters {
 		int getVida();
 		int getNivel();
 		int getDefensa();
+		GodArc* getGodArc();
 
 		void setNombre(string);
 		void setVida(int);
 		void setNivel(int);
 		void setDefensa(int);
-
+		void setGodArc(GodArc*);
 };

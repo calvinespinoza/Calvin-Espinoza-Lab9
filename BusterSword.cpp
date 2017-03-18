@@ -2,15 +2,15 @@
 
 BusterSword::BusterSword()
 {
-	nivel = 0;
+	ataque = 0;
 	elemento = "";
 	nivelAtaque = 0;
 	poder = 0;
 }
 
-BusterSword::BusterSword(int pNivel, string pElemento, int pNivelAtaque, int pPoder) : GodArc(pNivel, pElemento)
+BusterSword::BusterSword(int pAtaque, string pElemento, int pNivelAtaque, int pPoder) : GodArc(pAtaque, pElemento)
 {
-	nivel = pNivel;
+	ataque = pAtaque;
 	elemento = pElemento;
 	nivelAtaque = pNivelAtaque;
 	poder = pPoder;

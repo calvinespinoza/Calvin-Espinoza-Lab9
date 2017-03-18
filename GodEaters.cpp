@@ -36,6 +36,11 @@ int GodEaters::getDefensa()
 	return defensa;
 }
 
+GodArc* GodEaters::getGodArc()
+{
+	return godarc;
+}
+
 void GodEaters::setNombre(string pNombre)
 {
 	nombre = pNombre;
@@ -57,4 +62,8 @@ void GodEaters::setDefensa(int pNivel)
 {
 	defensa = pNivel * 20;
 
+}
+void GodEaters::setGodArc(GodArc* pGodarc)
+{
+	godarc = pGodarc;
 }
