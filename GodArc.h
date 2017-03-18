@@ -17,6 +17,4 @@ class GodArc {
 
 		void setNivel(int);
 		void setElemento(string);
-
-		virtual ~GodArc ();
 };
