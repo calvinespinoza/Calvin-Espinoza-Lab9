@@ -423,7 +423,7 @@ int main() {
 						godeaters.at(pos1-1) -> setNivel(godeaters.at(pos1-1) -> getNivel() + 1);
 					}
 
-					cout << "Continuar pelea [y]: ";
+					cout << "Continuar pelea [y]: "";
 					cin >> cont;
 					cout << endl << "--------------------------------------------------------------" << endl;
 				}
