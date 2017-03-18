@@ -8,7 +8,7 @@ class ShortSword : public GodArc {
 
 	public:
 		ShortSword();
-		ShortSword(int, string, int, int)
+		ShortSword(int, string, int, int);
 
 		int getNivelAtaque();
 		int getPoder();

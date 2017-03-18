@@ -4,7 +4,7 @@
 using namespace std;
 
 class GodArc {
-	private:
+	protected:
 		int nivel;
 		string elemento;
 

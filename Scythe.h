@@ -8,7 +8,7 @@ class Scythe : public GodArc {
 
 	public:
 		Scythe();
-		Scythe(int, string, int, int)
+		Scythe(int, string, int, int);
 
 		int getNivelAtaque();
 		int getPoder();

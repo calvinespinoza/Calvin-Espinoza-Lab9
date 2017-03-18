@@ -8,7 +8,7 @@ class BusterSword : public GodArc {
 
 	public:
 		BusterSword();
-		BusterSword(int, string, int, int)
+		BusterSword(int, string, int, int);
 
 		int getNivelAtaque();
 		int getPoder();

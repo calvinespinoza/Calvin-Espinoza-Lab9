@@ -1,4 +1,5 @@
 #pragma once
+#include "GodArc.h"
 #include <string>
 
 using namespace std;
@@ -13,7 +14,7 @@ class GodEaters {
 
 	public:
 		GodEaters();
-		GodEaters(string, int, int, int);
+		GodEaters(string, int);
 
 		string getNombre();
 		int getVida();

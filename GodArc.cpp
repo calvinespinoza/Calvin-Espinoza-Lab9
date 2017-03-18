@@ -3,7 +3,7 @@
 GodArc::GodArc()
 {
 	nivel = 0;
-	elemento = 0;
+	elemento = "";
 }
 
 GodArc::GodArc(int pNivel, string pElemento)
@@ -27,7 +27,7 @@ void GodArc::setNivel(int pNivel)
 	nivel = pNivel;
 }
 
-void GodArc::setElemento(int pElemento)
+void GodArc::setElemento(string pElemento)
 {
 	elemento = pElemento;
 }
