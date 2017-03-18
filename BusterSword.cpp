@@ -35,3 +35,8 @@ void BusterSword::setPoder(int pPoder)
 {
 	poder = pPoder;
 }
+
+int BusterSword::atacar()
+{
+	return GodArc::getAtaque() + nivelAtaque;
+}

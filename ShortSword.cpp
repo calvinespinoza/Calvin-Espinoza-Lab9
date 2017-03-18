@@ -35,3 +35,8 @@ void ShortSword::setPoder(int pPoder)
 {
 	poder = pPoder;
 }
+
+int ShortSword::atacar()
+{
+	return GodArc::getAtaque() + nivelAtaque;
+}

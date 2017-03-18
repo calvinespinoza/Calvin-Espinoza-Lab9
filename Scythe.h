@@ -15,4 +15,6 @@ class Scythe : public GodArc {
 
 		void setNivelAtaque(int);
 		void setPoder(int);
+
+		virtual int atacar();
 };

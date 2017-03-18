@@ -34,5 +34,13 @@ void GodArc::setElemento(string pElemento)
 
 int GodArc::atacar()
 {
-	return ataque;
+	return 0;
 }
+
+void GodArc::setNivelAtaque(int pNivelAtaque) { }
+
+void GodArc::setPoder(int pPoder) { }
+
+int GodArc::getNivelAtaque() { return 1; }
+
+int GodArc::getPoder() { return 1; }

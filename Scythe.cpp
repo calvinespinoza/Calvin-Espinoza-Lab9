@@ -35,3 +35,8 @@ void Scythe::setPoder(int pPoder)
 {
 	poder = pPoder;
 }
+
+int Scythe::atacar()
+{
+	return GodArc::getAtaque() + nivelAtaque;
+}

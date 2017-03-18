@@ -15,4 +15,6 @@ class BusterSword : public GodArc {
 
 		void setNivelAtaque(int);
 		void setPoder(int);
+
+		virtual int atacar();
 };

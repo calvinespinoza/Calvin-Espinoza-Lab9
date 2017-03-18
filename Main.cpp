@@ -22,14 +22,15 @@ int main() {
 
 	int option1 = 1;
 	while (option1 > 0 && option1 < 5) {
-		cout << "MENU" << endl
+		cout << endl << "*************************************************************" << endl;
+		cout << "                     MENU" << endl
 		<< "1. Agregar" << endl
 		<< "2. Modificar" << endl
 		<< "3. Eliminar" << endl
 		<< "4. Simulacion" << endl
 		<< "5. Salir" << endl;
 		cin >> option1;
-
+		cout << endl << "*************************************************************" << endl;
 		if(option1 == 1)
 		{
 			int option2;
@@ -84,7 +85,7 @@ int main() {
 					BusterSword* arma = new BusterSword(ataqueBase, elemento, nivelAtaque, poder);
 					godarcs.push_back(arma);
 
-					if (typeid(arma) == typeid(BusterSword))
+					if (typeid(*arma) == typeid(BusterSword))
 					{
 						cout << "yes" << endl;
 					} else {
@@ -226,12 +227,27 @@ int main() {
 				cout << "Ingrese el valor del poder del arma" << endl;
 				cin >> poder;
 
-				godarcs.at(posicion) -> setAtaque(ataqueBase);
-				godarcs.at(posicion) -> setElemento(elemento);
-		/*
-				dynamic_cast<GodArc*>(godarcs.at(posicion)) -> setNivelAtaque(nivelAtaque);
-				dynamic_cast<GodArc*>(godarcs.at(posicion)) -> setPoder(poder);
-*/
+				godarcs.at(posicion-1) -> setAtaque(ataqueBase);
+				godarcs.at(posicion-1) -> setElemento(elemento);
+				if (typeid(*godarcs.at(posicion-1)) == typeid(BusterSword))
+				{
+					BusterSword* temp = (BusterSword *) godarcs.at(posicion-1);
+					temp -> setNivelAtaque(nivelAtaque);
+					temp -> setPoder(poder);
+				}
+				else if (typeid(godarcs.at(posicion-1)) == typeid(Scythe))
+				{
+					Scythe* temp = (Scythe *) godarcs.at(posicion-1);
+					temp -> setNivelAtaque(nivelAtaque);
+					temp -> setPoder(poder);
+				}
+				else if (typeid(godarcs.at(posicion-1)) == typeid(ShortSword))
+				{
+					ShortSword* temp = (ShortSword *) godarcs.at(posicion-1);
+					temp -> setNivelAtaque(nivelAtaque);
+					temp -> setPoder(poder);
+				}
+
 				cout << "El GodArc ha sido modificado exitosamente" << endl;
 			}
 			else if (option2 == 2)
@@ -250,9 +266,9 @@ int main() {
 				cout << endl << "Eliga el GodArc para el guerrero" << endl;
 				cin >> pos;
 
-				godeaters.at(posicion) -> setNombre(nombre);
-				godeaters.at(posicion) -> setNivel(nivel);
-				godeaters.at(posicion) -> setGodArc(godarcs.at(pos));
+				godeaters.at(posicion-1) -> setNombre(nombre);
+				godeaters.at(posicion-1) -> setNivel(nivel);
+				godeaters.at(posicion-1) -> setGodArc(godarcs.at(pos-1));
 
 				cout << "El GodEater ha sido modificado exitosamente" << endl;
 			}
@@ -296,11 +312,11 @@ int main() {
 				cout <<"Ingrese nivel de ataque" << endl;
 				cin >> ataque;
 
-				v_aragamis.at(posicion) -> setNombre(nombre);
-				v_aragamis.at(posicion) -> setVida(vida);
-				v_aragamis.at(posicion) -> setAtaque(ataque);
-				v_aragamis.at(posicion) -> setDefensa(defensa);
-				v_aragamis.at(posicion) -> setElemento(elemento);
+				v_aragamis.at(posicion-1) -> setNombre(nombre);
+				v_aragamis.at(posicion-1) -> setVida(vida);
+				v_aragamis.at(posicion-1) -> setAtaque(ataque);
+				v_aragamis.at(posicion-1) -> setDefensa(defensa);
+				v_aragamis.at(posicion-1) -> setElemento(elemento);
 
 				cout << "Aragamis modificado exitosamente" << endl;
 			}
@@ -333,6 +349,89 @@ int main() {
 				v_aragamis.erase(v_aragamis.begin() + posicion-1);
 			}
 		}
+		if (option1 == 4)
+		{
+			int pos1, pos2;
+			int ataque1, defensa1, ataque2, defensa2;
+			int vida1, vida2;
+			string cont, nombre1, nombre2;
+
+			imprimirGodEaters(godeaters);
+			cout << "Elegir GodEater" << endl;
+			cin >> pos1;
+
+			imprimirAragamis(v_aragamis);
+			cout << "Elegir Aragamis" << endl;
+			cin >> pos2;
+
+			godeaters.at(pos1-1) -> getGodArc() -> atacar();
+
+			if (typeid(*godeaters.at(pos1-1) -> getGodArc()) == typeid(BusterSword))
+			{
+				BusterSword* temp = (BusterSword *) godeaters.at(pos1-1) -> getGodArc();
+				ataque1 = temp -> atacar();
+			}
+			else if (typeid(*godeaters.at(pos1-1) -> getGodArc()) == typeid(Scythe))
+			{
+				Scythe* temp = (Scythe *) godeaters.at(pos1-1) -> getGodArc();
+				ataque1 = temp -> atacar();
+			}
+			else if (typeid(*godeaters.at(pos1-1) -> getGodArc()) == typeid(ShortSword))
+			{
+				ShortSword* temp = (ShortSword *) godeaters.at(pos1-1) -> getGodArc();
+				ataque1 = temp -> atacar();
+			}
+
+			defensa1 = godeaters.at(pos1-1) -> getDefensa();
+			ataque2 = v_aragamis.at(pos2-1) -> getAtaque();
+			defensa2 = v_aragamis.at(pos2-1) -> getDefensa();
+
+			vida1 = godeaters.at(pos1-1) -> getVida();
+			vida2 = v_aragamis.at(pos2-1) -> getVida();
+			nombre1 = godeaters.at(pos1-1) -> getNombre();
+			nombre2 = v_aragamis.at(pos2-1) -> getNombre();
+
+			if (defensa1 > ataque2)
+			{
+				cout << "Ha ganado el GodEater automaticamente" << endl;
+				godeaters.at(pos1-1) -> setNivel(godeaters.at(pos1-1) -> getNivel() + 1);
+			}
+			else
+			{
+				while (vida1 > 0 && vida2 > 0)
+				{
+					cout << endl << "---------------------------------------------------------------" << endl;
+					cout << endl <<  "GodEater " << nombre1 << endl << "HP: " << vida1 << endl;
+					cout << "Aragamis " << nombre2 << endl << "HP: " << vida2 << endl << endl;
+
+					cout << "El GodEater ataca" << endl;
+					cout << "Se reduce la vida del Aragamis por " << ataque1 << endl;
+					vida2 -= ataque1;
+
+					cout << "El Aragamis ataca" << endl;
+					cout << "Se reduce la vida del GodEater por " << ataque2 - defensa1 << endl;
+					vida1 -= ataque2 + defensa1;
+
+					if (vida1 <= 0)
+					{
+						cout << "Ha ganado el Aragamis " << nombre2 << endl;
+					}
+					else if (vida2 <= 0)
+					{
+						cout << "Ha ganado el GodEater " << nombre1 << endl;
+						cout << nombre1 << " ha subido de nivel!" << endl;
+						godeaters.at(pos1-1) -> setNivel(godeaters.at(pos1-1) -> getNivel() + 1);
+					}
+
+					cout << "Continuar pelea [y]: ";
+					cin >> cont;
+					cout << endl << "---------------------------------------------------------------" << endl;
+				}
+
+
+
+			}
+		}
 		if (option1 == 5)
 		{
 			return 0;
@@ -346,7 +445,7 @@ void imprimirGodArcs(vector <GodArc*> vector1)
 {
 
         for (int j = 0; j < vector1.size(); j++) {
-		string type = "???";/*
+		string type = "???";
 		if (typeid(*vector1.at(j)) == typeid(BusterSword))
 		{
 			type = "Buster Sword";
@@ -358,8 +457,8 @@ void imprimirGodArcs(vector <GodArc*> vector1)
 		else if (typeid(*vector1.at(j)) == typeid(ShortSword))
 		{
 			type = "Short Sword";
-		}*/
-                cout << j+1 << ") " << type /*<< vector1.at(j).name()*/ << " " << vector1.at(j) -> getElemento() << endl;
+		}
+                cout << j+1 << ") " << type /*<< vector1.at(j).name()*/ << " – " << vector1.at(j) -> getElemento() << endl;
         }
 }
 void imprimirGodEaters(vector <GodEaters*> vector1)
